@@ -41,6 +41,12 @@ class Interpreter{
         this.error();
     }
     eat(tokenType){
-        
+        //compare current token wit hthe type passed in (expected); if they match "eat" the currentToken
+        //and assign it to the currentToken value
+        if(this.currentToken.type == tokenType){
+            this.currentToken = this.getNextToken();
+        }else{
+            this.error();
+        }
     }
 }
